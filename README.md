@@ -1,18 +1,20 @@
-# Local Times Proposal
+# Time Zone Database Proposal
+
+It is extremely difficult to compute local times accurately in JavaScript right now. Here we propose a minimal fix. In summary:
 
   - Computing local times accurately requires the [IANA time zone database](https://en.wikipedia.org/wiki/Tz_database)
-  - The database is quite large by web standards (+300kb gzipped)
+  - The database, located [here](https://www.iana.org/time-zones), is quite large by web standards (+300kb gzipped)
   - We recommend that browsers:
 
   	  1. **Distribute this database**, adding to the database as necessary as part of their existing automatic update mechanism.
   	  2. **Provide a low-level JavaScript API to access this data.** This will allow the creation of high-level date libraries that make a variety of choices. For example, Elm and JS will almost certainly want to expose this data differently.
 
 
-## Why do we need this database?
+<br>
 
-Let’s start by asking **“how do you convert a POSIX time to a local time?”**
+## Wait, why do we need this database?
 
-It turns out it is very complicated! Some important factors are:
+Let’s start by asking **“how do you convert a POSIX time to a local time?”** If someone is in UTC-7, you just subtract 7 hours right? Unfortunately, it is much more complicated than that! Important factors include:
 
   - [**Leap Seconds**](https://en.wikipedia.org/wiki/Leap_second) &mdash; The Earth’s rotation speed varies in response to climatic and geological events, so extra seconds are added unpredictably by the International Earth Rotation and Reference Systems Service (IERS) usually about six months in advance.
 
@@ -20,12 +22,12 @@ It turns out it is very complicated! Some important factors are:
 
   - **One-Time Events** &mdash; Samoa moved [from UTC-11 to UTC+13](https://en.wikipedia.org/wiki/Time_in_Samoa) in 2011, entirely skipping 30 December. They move to UTC+14 for daylight saving time.
 
-There are many other oddities that make it very difficult to compute local times accurately!
-
-In fact, there are so many oddities that **anyone who wants accurate local times relies on [this database of exceptions](https://www.iana.org/time-zones).**
+There are many other oddities that make it very difficult to compute local times accurately. In fact, there are so many oddities that **anyone who wants accurate local times relies on [this database of exceptions](https://www.iana.org/time-zones).**
 
 
-## Why do we need it in the browser?
+<br>
+
+## Okay, but why do we need it in the browser?
 
 Why not just download the timezone data if you need it?
 
@@ -43,6 +45,8 @@ If people decide to go path 3 today, they must pay a couple important costs. (1)
 
 Point is, the best case is not great, and **if this data was available in the browser, people could default into getting local times right without any asset bloat, risky code, dev time, etc.**
 
+
+<br>
 
 ## Draft API
 
