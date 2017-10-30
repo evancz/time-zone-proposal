@@ -51,7 +51,7 @@ How many people get this right? How many people even know about it? And for the 
 
 ## Benefit Three - Simplicity
 
-By keeping the API small, it is useful to a broader range of libraries and languages. The API provides the raw data needed by [moment-timezone](https://github.com/moment/moment-timezone) in JavaScript and for the [`Time`] module in Elm. Both approaches let folks work with dates in a way that makes sense in JS and Elm respectively, but they do so with very different APIs.
+By keeping the API small, it is useful to a broader range of libraries and languages. The API provides the raw data needed by [moment-timezone](https://github.com/moment/moment-timezone) in JavaScript and for the [`Time`](https://github.com/elm-lang/core/blob/dev/src/Time.elm) module in Elm. Both approaches let folks work with dates in a way that makes sense in JS and Elm respectively, but they do so with very different APIs.
 
 So the proposal here could made “easier to use” for JS programmers by adding a bunch of higher-level functions for working with dates, but that would likely make it extremely difficult (or maybe impossible) to create APIs that make sense for different languages and design goals. By keeping this proposal simple, it allows the ecosystem to find great ways of working with dates more organically.
 
