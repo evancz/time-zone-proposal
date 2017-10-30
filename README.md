@@ -18,6 +18,7 @@ dictionary TimeZoneEra {
 
 This proposal will benefit page load speed and the reliability of browser based applications. It is also very simple, giving library authors the freedom to create a very broad range of higher-level APIs while keeping the burden on browsers as low as possible.
 
+<br>
 
 ## Benefit One - Page Load Speed
 
