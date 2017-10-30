@@ -1,5 +1,7 @@
 # Time Zone Proposal
 
+**DRAFT - Still acquiring feedback!**
+
 Displaying and computing dates accurately requires the [IANA time zone database](https://en.wikipedia.org/wiki/Tz_database). We propose the following API to make this data easily available in browsers:
 
 ```
