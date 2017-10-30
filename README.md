@@ -18,6 +18,8 @@ dictionary TimeZoneEra {
 
 This proposal will benefit page load speed and the reliability of browser based applications. It is also very simple, giving library authors the freedom to create a very broad range of higher-level APIs while keeping the burden on browsers as low as possible.
 
+I recommend checking out [moment-timezone](https://github.com/moment/moment-timezone) or Elm’s [`Time`](https://github.com/elm-lang/core/blob/dev/src/Time.elm) module to see libraries that would use this API directly.
+
 <br>
 
 ## Benefit One - Page Load Speed
